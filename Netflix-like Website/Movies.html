@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #fff;
+        }
+
+        header, nav {
+            background: #111;
+        }
+
+        header, nav, section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: 2em; /* Increase font size for the Netflix logo */
+        }
+
+        .featured-content, .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background: #e50914;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .close {
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .recommendations, .movie {
+            margin: 20px;
+        }
+
+        .movie img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Caption style */
+        .caption {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Red font color for specified sections */
+        .movies {
+            color: red;
+        }
+    </style>
+    <title>Netflix-like Homepage - Movies</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Netflix</h1>
+        <p class="caption">Re-imagined by Doondi</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Movies.html" class="movies">Movies</a>
+        <a href="TVShows.html">TV Shows</a>
+        <a href="#">New & Popular</a>
+        <a href="MyList.html">My List</a>
+    </nav>
+
+    <section class="featured-content">
+        <div>
+            <h1>Watch Something Awesome Today</h1>
+            <a href="#" class="button" onclick="openModal('loginModal')">Start Watching</a>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="recommendations" id="movieRecommendations">
+        <h2 class="movies">Recommended Movies</h2>
+        <div class="movie">
+            <img src="https://static.tnn.in/thumb/msid-105662758,thumbsize-1425008,width-1280,height-720,resizemode-75/105662758.jpg" alt="Salaar Movie Poster">
+            <p>Salaar</p>
+        </div>
+        <div class="movie">
+            <img src="https://images.news18.com/ibnlive/uploads/2022/09/sita-ramam-1-16630399673x2.jpg?impolicy=website&width=510&height=356" alt="Sita Ramam Movie Poster">
+            <p>Sita Ramam</p>
+        </div>
+        <div class="movie">
+            <img src="https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2023/03/13/231673-oscar-rrr.png?itok=LYqnzY7t&c=394d40a5c582c85e82cb75632fb14b18" alt="RRR Movie Poster">
+            <p>RRR</p>
+        </div>
+        <div class="movie">
+            <img src="https://upload.wikimedia.org/wikipedia/hi/3/31/Hanu_Man_poster.jpg" alt="Hanuman Movie Poster">
+            <p>Hanuman</p>
+        </div>
+        <div class="movie">
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Jailer_2023_Tamil_film_poster.jpg" alt="Jailer Movie Poster">
+            <p>Jailer</p>
+        </div>
+        <div class="movie">
+            <img src="https://images.hindustantimes.com/img/2021/12/23/550x309/atrangirereview.jpg_1640268071483_1640268110460.jpg" alt="Atrangi Re Movie Poster">
+            <p>Atrangi Re</p>
+        </div>
+        <!-- Add more movies as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Netflix</p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function login(event) {
+            event.preventDefault();
+            closeModal('loginModal');
+            document.getElementById('movieRecommendations').style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

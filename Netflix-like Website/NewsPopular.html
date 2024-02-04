@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to the News and Popular page */
+
+        .stranger-things {
+            display: none;
+        }
+
+        /* Red font color for specified sections */
+        .news-popular {
+            color: red;
+        }
+    </style>
+    <title>Netflix-like Homepage - News and Popular</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Netflix</h1>
+        <p class="caption">Re-imagined by Doondi</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Movies.html">Movies</a>
+        <a href="TVShows.html">TV Shows</a>
+        <a href="#" class="news-popular">New & Popular</a>
+        <a href="MyList.html">My List</a>
+    </nav>
+
+    <section class="featured-content">
+        <div>
+            <h1>Watch Something Awesome Today</h1>
+            <a href="#" class="button" onclick="openModal('loginModal')">Start Watching</a>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="news-popular">
+        <h2>News and Popular</h2>
+        <p class="news-popular">Stranger Things is recorded as the highest-watched TV Show of 2024</p>
+        <div class="movie stranger-things">
+            <img src="https://resizing.flixster.com/0xxuABVVuzJrUT130WFHKE-irEg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNzUyMTFhOTktZTU4Ni00ODkyLWJlYjQtZTgxYTllZmU2OGM0LmpwZw=="
+                alt="Stranger Things Poster">
+            <p>Stranger Things</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Netflix</p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function login(event) {
+            event.preventDefault();
+            closeModal('loginModal');
+            document.getElementsByClassName('stranger-things')[0].style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

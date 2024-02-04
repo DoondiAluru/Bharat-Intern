@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #fff;
+        }
+
+        header, nav {
+            background: #111;
+        }
+
+        header, nav, section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: 2em; /* Increase font size for the Netflix logo */
+        }
+
+        .featured-content, .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background: #e50914;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .close {
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .recommendations, .movie {
+            margin: 20px;
+        }
+
+        .movie img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Caption style */
+        .caption {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Red font color for specified sections */
+        .tv-shows {
+            color: red;
+        }
+    </style>
+    <title>Netflix-like Homepage - TV Shows</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Netflix</h1>
+        <p class="caption">Re-imagined by Doondi</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Movies.html">Movies</a>
+        <a href="TVShows.html" class="tv-shows">TV Shows</a>
+        <a href="#">New & Popular</a>
+        <a href="MyList.html">My List</a>
+    </nav>
+
+    <section class="featured-content">
+        <div>
+            <h1>Watch Something Awesome Today</h1>
+            <a href="#" class="button" onclick="openModal('loginModal')">Start Watching</a>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="recommendations" id="tvShowRecommendations">
+        <h2 class="tv-shows">Recommended TV Shows</h2>
+        <div class="movie">
+            <img src="https://m.media-amazon.com/images/I/81rEhhwbubL._SL1500_.jpg" alt="One Piece Poster">
+            <p>One Piece</p>
+        </div>
+        <div class="movie">
+            <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Sacred_Games_Title.png" alt="Sacred Games Poster">
+            <p>Sacred Games</p>
+        </div>
+        <div class="movie">
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/25/Kota_Factory_2_poster.jpg" alt="Kota Factory Poster">
+            <p>Kota Factory</p>
+        </div>
+        <!-- Add more TV shows as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Netflix</p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function login(event) {
+            event.preventDefault();
+            closeModal('loginModal');
+            document.getElementById('tvShowRecommendations').style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
