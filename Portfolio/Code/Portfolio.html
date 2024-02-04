@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doondi Aluru - Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c2b30; /* Dark Grey */
+            color: #d6d6d6; /* Light Grey */
+            line-height: 1.6;
+        }
+
+        a {
+            color: #d6d6d6;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #f58f7c; /* Light Orange */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #f58f7c; /* Light Orange */
+            color: #d6d6d6;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Bookman Old Style', serif;
+            color: #4f4f51; /* Dark Greyish Blue */
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+            color: #4f4f51; /* Dark Greyish Blue */
+        }
+
+        /* Section Styles */
+        section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #d6d6d6;
+            font-family: 'Bookman Old Style', serif;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: transparent;
+            color: #d6d6d6;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #profiles ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #profiles li {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Doondi Aluru</h1>
+            <p>Student at KL University - Hyderabad</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="image-container">
+                <img src="https://media.licdn.com/dms/image/D5603AQEJcGgkDKTNlg/profile-displayphoto-shrink_400_400/0/1706603677287?e=1712793600&v=beta&t=euiRqHW9S8Qagx_be0_7dAwaBA2wr9R213sqrptGhYg" alt="Profile" class="profile-image">
+            </div>
+            <p style="text-align: justify;">Hi, I'm Doondi, currently an undergraduate in Electronics and Communication Engineering at
+                Koneru Lakshmaiah University, specializing in Computer Science. My academic focus is a fusion of
+                electronics and communication, reflecting a keen interest in the dynamic realm of technology. Committed
+                to acquiring a comprehensive understanding of computer
+                science, my journey extends beyond the traditional classroom setting. I am dedicated to staying abreast
+                of the latest developments in this rapidly evolving field, positioning myself at the forefront of
+                technological advancements. My pursuit goes beyond earning a degree; it embodies a proactive approach to
+                engage with and contribute to the modern technological landscape.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <p>Narayana Junior College <br> Hyderabad, Telangana</p>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <p>12th standard, TSBIE Board <br> Percentage of 95.8% <br> 2022 - 2023</p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <p>Narayana <br> Hyderabad, Telangana</p>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <p>10th standard, State Board <br> GPA of 10 <br> 2020 - 2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="internships">
+        <div class="container">
+            <h2>Internships</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <p>Web Developer Intern</p>
+                </div>
+                <div style="flex: 1; text-align: right;">
+                    <p>Bharat Intern - 2024</p>
+                </div>
+            </div>
+            <!-- Add other internship details as needed -->
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1;">
+                            <p>Smart Farming</p>
+                        </div>
+                        <div style="flex: 1; text-align: right;">
+                            <p>Arduino, Uno, C++ | Academic Project - 2023</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="flex: 1;">
+                            <p>Portfolio Website</p>
+                        </div>
+                        <div style="flex: 1; text-align: right;">
+                            <p>HTML, CSS, JavaScript | Bharat Intern - 2024</p>
+                        </div>
+                    </div>
+                </li>
+                <!-- Add other project details as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="profiles">
+        <div class="container">
+            <h2>Profiles</h2>
+            <ul class="profile-links">
+                <li><a href="https://github.com/DoondiAluru" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/doondi-aluru/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.codechef.com/users/doondi_29" target="_blank">CodeChef</a></li>
+                <li><a href="https://www.hackerrank.com/profile/alurudoondi" target="_blank">HackerRank</a></li>
+                <li><a href="https://leetcode.com/doondi_29/" target="_blank">LeetCode</a></li>
+                <!-- Add other profile links as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <p>Computer Languages: C, Java</p>
+            <p>Web Dev Scripting Languages: HTML, CSS, JavaScript</p>
+            <p>Proficient concepts: Artificial Intelligence, Internet of Things (IOT), Data Structures, Object Oriented
+                Design</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>
+                <span>Phone: +91 82475 30489</span><br>
+                <span>Email: alurudoondi@gmail.com</span>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <!-- Remove the copyright text -->
+        </div>
+    </footer>
+</body>
+
+</html>
